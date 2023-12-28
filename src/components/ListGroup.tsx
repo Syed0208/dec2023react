@@ -1,15 +1,20 @@
-function ListGroup() {
-  let cities = ["New York", "Tokyo", "Chennai", "Paris", "Bangalore"];
-  let selectedIndex = 0;
+import { useState } from "react";
 
-  //Event Handler
+interface Props {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup({ items, heading }: Props) {
+  //Hook
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <>
-      <h1>Test Fragment</h1>
-      {cities.length === 0 && <p>No city added.</p>}
+      <h1>{heading}</h1>
+      {items.length === 0 && <p>No city added.</p>}
       <ul className="list-group">
-        {cities.map((city, index) => (
+        {items.map((city, index) => (
           <li
             className={
               selectedIndex === index
@@ -18,7 +23,7 @@ function ListGroup() {
             }
             key={city}
             onClick={() => {
-              selectedIndex = index;
+              setSelectedIndex(index);
             }}
           >
             {city}
