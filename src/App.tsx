@@ -1,11 +1,9 @@
-import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
   return (
     <div>
-      <Alert>
-        Child <span>Alert</span>
-      </Alert>
+      <Button onClick={() => console.log("Button clicked!!")}>My Button</Button>
     </div>
   );
 }
