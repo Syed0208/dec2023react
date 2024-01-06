@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./components/Button/Button";
 import MyAlert from "./components/MyAlert";
 import ListGroup from "./components/ListGroup/ListGroup";
+import Like from "./components/Like";
 
 function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
@@ -15,11 +16,14 @@ function App() {
     //     onSelectItem={(item) => console.log("Item active")}
     //   ></ListGroup>
     // </div>
+    // <div>
+    //   {/* {alertVisible && (
+    //     <MyAlert onClose={() => setAlertVisibility(false)}>My Alert!</MyAlert>
+    //   )} */}
+    //   <Button onClick={() => setAlertVisibility(true)}>My Button</Button>
+    // </div>
     <div>
-      {/* {alertVisible && (
-        <MyAlert onClose={() => setAlertVisibility(false)}>My Alert!</MyAlert>
-      )} */}
-      <Button onClick={() => setAlertVisibility(true)}>My Button</Button>
+      <Like onClick={() => console.log("Clicked!!")} />
     </div>
   );
 }
