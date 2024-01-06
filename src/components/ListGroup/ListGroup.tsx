@@ -33,6 +33,7 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
       <List>
         {items.map((item, index) => (
           <ListItem
+            style={{ backgroundColor: "yellow" }}
             isActive={index === selectedIndex}
             key={item}
             onClick={() => {
